@@ -5,30 +5,30 @@
        xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
        xmlns:xacro="http://ros.org/wiki/xacro">
 
-  <xacro:macro name="youbot_gripper_transmission" params="name">
+	<xacro:macro name="youbot_gripper_transmission" params="name">
 
-    <transmission name="${name}_finger_l_trans">
+		<transmission name="${name}_finger_l_trans">
       <type>transmission_interface/SimpleTransmission</type>
-      <actuator name="${name}_finger_l_motor">
-        <hardwareInterface>EffortJointInterface</hardwareInterface>
+			<actuator name="${name}_finger_l_motor">
+        <hardwareInterface>PositionJointInterface</hardwareInterface>
         <mechanicalReduction>1</mechanicalReduction>
       </actuator>
-      <joint name="${name}_finger_joint_l">
-        <hardwareInterface>EffortJointInterface</hardwareInterface>
+			<joint name="${name}_finger_joint_l">
+        <hardwareInterface>PositionJointInterface</hardwareInterface>
       </joint>
-    </transmission>
-  
-    <transmission name="${name}_finger_r_trans">
+		</transmission>
+
+		<transmission name="${name}_finger_r_trans">
       <type>transmission_interface/SimpleTransmission</type>
-      <actuator name="${name}_finger_r_motor">
-        <hardwareInterface>EffortJointInterface</hardwareInterface>
+			<actuator name="${name}_finger_r_motor">
+        <hardwareInterface>PositionJointInterface</hardwareInterface>
         <mechanicalReduction>1</mechanicalReduction>
       </actuator>
-      <joint name="${name}_finger_joint_r">
-        <hardwareInterface>EffortJointInterface</hardwareInterface>
+			<joint name="${name}_finger_joint_r">
+        <hardwareInterface>PositionJointInterface</hardwareInterface>
       </joint>
-    </transmission>
+		</transmission>
 
-  </xacro:macro>
+	</xacro:macro>
 
 </robot>
