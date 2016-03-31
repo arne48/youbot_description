@@ -4,13 +4,13 @@
        xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
        xmlns:xacro="http://ros.org/wiki/xacro">
 
-	
-	
+
+
 	<xacro:macro name="youbot_plate" params="parent name *origin">
 
 		<!-- joint between arm_7_link and sdh_palm_link -->
 		<joint name="${name}_joint" type="fixed" >
-			<insert_block name="origin" />
+			<xacro:insert_block name="origin" />
 			<parent link="${parent}" />
 			<child link="${name}_link" />
 		</joint>
@@ -21,7 +21,7 @@
 				<mass value="2.397"/>
 				<inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01" />
 			</inertial>
-			
+
 			<visual>
 				<origin xyz="0 0 0" rpy="0 0 0" />
 				<geometry>
@@ -29,7 +29,7 @@
 				</geometry>
 				<material name="DarkGrey"/>
 			</visual>
-			
+
 			<collision>
 				<origin xyz="0 0 0" rpy="0 0 0" />
 				<geometry>
@@ -39,8 +39,8 @@
 		</link>
 
 		<!-- extensions -->
-		
-	
+
+
 	</xacro:macro>
 
 </robot>
